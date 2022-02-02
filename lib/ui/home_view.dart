@@ -42,7 +42,8 @@ class _HomeViewState extends State<HomeView> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text("Coin name: ${document.id}"),
-                        Text("Amount Ownerd ${document.data()['Amount']}"),
+                        Text(
+                            "Amount Owned ${(document.data() as dynamic)['name']}"),
                       ],
                     ),
                   );
