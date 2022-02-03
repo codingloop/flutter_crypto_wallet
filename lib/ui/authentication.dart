@@ -21,34 +21,49 @@ class _AuthenticationState extends State<Authentication> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(color: Colors.blueAccent),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextFormField(
-              controller: _emailField,
-              decoration: InputDecoration(
-                hintText: "abcd@email.com",
-                hintStyle: TextStyle(
+            Container(
+              width: MediaQuery.of(context).size.width / 1.3,
+              child: TextFormField(
+                style: TextStyle(
                   color: Colors.white,
                 ),
-                labelText: "Email",
-                labelStyle: TextStyle(
-                  color: Colors.white,
+                controller: _emailField,
+                decoration: InputDecoration(
+                  hintText: "abcd@email.com",
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  labelText: "Email",
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-            TextFormField(
-              controller: _passwordField,
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: "Password",
-                hintStyle: TextStyle(
-                  color: Colors.white,
-                ),
-                labelText: "Password",
-                labelStyle: TextStyle(
-                  color: Colors.white,
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width / 1.3,
+              child: TextFormField(
+                controller: _passwordField,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  labelText: "Password",
+                  labelStyle: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 35,
             ),
             Container(
               width: MediaQuery.of(context).size.width,
@@ -70,6 +85,9 @@ class _AuthenticationState extends State<Authentication> {
                 },
                 child: Text("Register"),
               ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 35,
             ),
             Container(
               width: MediaQuery.of(context).size.width,
