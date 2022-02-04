@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypto_wallet/net/api_methods.dart';
 import 'package:crypto_wallet/net/flutterfire.dart';
 import 'package:crypto_wallet/ui/add_view.dart';
+import 'package:crypto_wallet/ui/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
@@ -38,6 +39,36 @@ class _HomeViewState extends State<HomeView> {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("My Coins"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              signOut();
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => Authentication()),
+                (Route<dynamic> route) => false,
+              );
+              //   Navigator.of(context).pushReplacement(Authentication());
+              //   if (shouldNavigate) {
+              //         Navigator.push(
+              //           context,
+              //           MaterialPageRoute(builder: (context) => HomeView()),
+              //         );
+            },
+            icon: Icon(
+              Icons.power_settings_new,
+            ),
+          ),
+        ],
+        leading: new IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () {
+              signOut();
+              Navigator.pop(context, true);
+            }),
+      ),
       body: Container(
         decoration: BoxDecoration(
           color: Colors.white,

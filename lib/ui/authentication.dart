@@ -77,9 +77,11 @@ class _AuthenticationState extends State<Authentication> {
                   bool shouldNavigate =
                       await register(_emailField.text, _passwordField.text);
                   if (shouldNavigate) {
-                    Navigator.push(
+                    Navigator.of(context).pop();
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(builder: (context) => HomeView()),
+                      (Route<dynamic> route) => false,
                     );
                   }
                 },

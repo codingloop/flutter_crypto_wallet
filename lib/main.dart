@@ -1,3 +1,5 @@
+import 'package:crypto_wallet/net/flutterfire.dart';
+import 'package:crypto_wallet/ui/home_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:crypto_wallet/ui/authentication.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (checkLoggedIn()) {
+      return const MaterialApp(
+        title: 'Crypto Wallet',
+        home: HomeView(),
+      );
+    }
     return const MaterialApp(
       title: 'Crypto Wallet',
       home: Authentication(),

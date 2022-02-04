@@ -1,6 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+bool checkLoggedIn() {
+  User? user = FirebaseAuth.instance.currentUser;
+  if (user != null) return true;
+  return false;
+}
+
+void signOut() {
+  FirebaseAuth.instance.signOut();
+}
+
 Future<bool> signIn(String email, String password) async {
   try {
     await FirebaseAuth.instance
