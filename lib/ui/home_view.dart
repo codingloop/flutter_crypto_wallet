@@ -162,8 +162,8 @@ class _HomeViewState extends State<HomeView> {
 
   getValues() async {
     bitcoin = await getPrice("bitcoin");
-    etherium = await getPrice("bitcoin");
-    tether = await getPrice("bitcoin");
+    etherium = await getPrice("etherium");
+    tether = await getPrice("tether");
     setState(() {});
   }
 }
