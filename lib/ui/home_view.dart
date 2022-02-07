@@ -108,9 +108,7 @@ class _HomeViewState extends State<HomeView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          SizedBox(
-                            width: 0.0,
-                          ),
+                          SizedBox(width: 0.0),
                           Text(
                             "${document.id}",
                             style: TextStyle(
